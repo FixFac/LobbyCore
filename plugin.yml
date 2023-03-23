@@ -1,0 +1,24 @@
+name: LobbyCore
+author: FixFac
+api: 4.0.0
+version: Fixfac-V1
+main: fix\Main
+
+permissions:
+ me.command:
+   default: op
+ say.command:
+   default: op
+ report.view:
+   default: op
+ games.item:
+   default: true
+ cosmeticos.item:
+   default: op
+ info.item:
+   default: true
+ report.item:
+   default: true
+
+
+

@@ -1,0 +1,48 @@
+# Welcome to the configuration of your lobby core #
+# Form Games
+title-games: "Games"
+content-games: "Select any Game from our server that you want"
+button1-games: "Skywars"
+button2-games: "Factions"
+button3-games: "Tnt Run"
+button4-games: "1vs1"
+button5-games: "1vsbot"
+button6-games: "Free For All"
+
+# commands that will execute each button of your game mode
+# (add a command for the player to teleport to the game mode or server)
+# Games Command
+command-game1: "say configure a command in the config.yml"
+command-game2: "say configure a command in the config.yml"
+command-game3: "say configure a command in the config.yml"
+command-game4: "say configure a command in the config.yml"
+command-game5: "say configure a command in the config.yml"
+command-game6: "say configure a command in the config.yml"
+
+# Form Cosmeticos
+title-cosmeticos: "Cosmeticos"
+content-cosmeticos: "select some of the cosmetics we have"
+button1-cosmeticos: "Fly"
+button2-cosmeticos: "Size"
+button3-cosmeticos: "Chat Color"
+button4-cosmeticos: "Nick Color"
+
+# Form Info 
+
+info-form-title: "Info"
+info-form-content: "edit config.yml"
+info-form-msg: "thanks for using fixfac lobbycore"
+
+# report Config
+# menssage
+rpt-report-deny: ""
+rpt-report-accept: ""
+
+# Webhook rpt config
+rpt-webhook-link: ""
+rpt-name-Webhook: ""
+rpt-avatar-webhook: ""
+
+# Report Form
+rpt-title-form: "report"
+rpt-info-form: "edit config.yml"
