@@ -1,7 +1,7 @@
 name: LobbyCore
 author: FixFac
 api: 4.0.0
-version: Fixfac-V1
+version: 1.0
 main: fix\Main
 
 permissions:
