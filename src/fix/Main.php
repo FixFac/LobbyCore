@@ -7,7 +7,7 @@ use fix\Utils\ItemForms;
 use fix\Utils\Sounds;
 use fix\EventListener;
 
-use fix\commands\{MeCommand, SayCommand, TellCommand};
+use fix\commands\{MeCommand, SayCommand, TransferCommand};
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
@@ -15,7 +15,6 @@ use pocketmine\Server;
 
 class Main extends PluginBase
 {
-    public $prot = [];
     public $chatcolor = [];
 
     public Config $config;
@@ -57,7 +56,8 @@ class Main extends PluginBase
     private function loadCommands(): void {
         $cmd = [
             new MeCommand($this),
-            new SayCommand($this)
+            new SayCommand($this),
+            new TransferCommand($this)
         ];
         $this->getServer()->getCommandMap()->registerAll("fixfac", $cmd);
     }
