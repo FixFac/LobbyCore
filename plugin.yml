@@ -9,6 +9,8 @@ permissions:
    default: op
  say.command:
    default: op
+ transfer.command:
+   default: true 
  report.view:
    default: op
  games.item:
