@@ -87,7 +87,7 @@ class EventListener implements Listener {
     public function onUse(PlayerItemUseEvent $event) : void {
         $player = $event->getPlayer();
         $usage = $event->getItem()->getCustomName();
-        if($usage === "§eGames"){
+        if($usage === "§eGames§1"){
             if(!$player->hasPermission("games.item")){
                 $player->sendMessage("§cInsufficient permissions to execute this action");
                 $event->cancel();
