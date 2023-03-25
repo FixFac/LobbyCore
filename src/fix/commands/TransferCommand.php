@@ -7,20 +7,15 @@ use pocketmine\command\CommandSender;
 use pocketmine\player\Player;
 use pocketmine\Server;
 use pocketmine\network\mcpe\protocol\TransferPacket;
-use pocketmine\plugin\PluginOwned;
 
 use fix\Main;
 
-class TransferCommand extends Command implements PluginOwned {
+class TransferCommand extends Command  {
 
     public function __construct(private Main $plugin){
         parent::__construct("transfer", "Transfer to another server with the ip", "/transfer (server) ");
         $this->setPermission("transfer.command");
     }
-
-    public function getOwningPlugin() : Main{
-		return $this->plugin;
-	}
 
     public function execute(CommandSender $sender, string $commandLabel, array $args){
         if(count($args) < 2) {
