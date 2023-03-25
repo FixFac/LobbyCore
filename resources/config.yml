@@ -1,7 +1,7 @@
 # Welcome to the configuration of your lobby core #
 # Form Games
 title-games: "Games"
-content-games: "Select any Game from our server that you want"
+content-games: "Select any Game from our server that you want, Edit commands config.yml"
 button1-games: "Skywars"
 button2-games: "Factions"
 button3-games: "Tnt Run"
@@ -11,34 +11,34 @@ button6-games: "Free For All"
 
 # commands that will execute each button of your game mode
 # (add a command for the player to teleport to the game mode or server)
+# Similarly you can use the following command to transfer from server to user "transfer (server) (port)""
 # Games Command
-command-game1: "say configure a command in the config.yml"
-command-game2: "say configure a command in the config.yml"
-command-game3: "say configure a command in the config.yml"
-command-game4: "say configure a command in the config.yml"
-command-game5: "say configure a command in the config.yml"
-command-game6: "say configure a command in the config.yml"
+command-game1: "say configure a command in the config.yml 1"
+command-game2: "say configure a command in the config.yml 2"
+command-game3: "say configure a command in the config.yml 3"
+command-game4: "say configure a command in the config.yml 4"
+command-game5: "say configure a command in the config.yml 5"
+command-game6: "say configure a command in the config.yml 6"
 
 # Form Cosmeticos
 title-cosmeticos: "Cosmeticos"
-content-cosmeticos: "select some of the cosmetics we have"
+content-cosmeticos: "select some of the cosmetics we have, edit config.yml"
 button1-cosmeticos: "Fly"
 button2-cosmeticos: "Size"
 button3-cosmeticos: "Chat Color"
 button4-cosmeticos: "Nick Color"
 
 # Form Info 
-
 info-form-title: "Info"
 info-form-content: "edit config.yml"
 info-form-msg: "thanks for using fixfac lobbycore"
 
 # report Config
 # menssage
-rpt-report-deny: ""
-rpt-report-accept: ""
+rpt-report-deny: "the report was not sent"
+rpt-report-accept: "the report was sent successfully"
 
-# Webhook rpt config
+# Webhook rpt config 
 rpt-webhook-link: ""
 rpt-name-Webhook: ""
 rpt-avatar-webhook: ""
@@ -46,3 +46,5 @@ rpt-avatar-webhook: ""
 # Report Form
 rpt-title-form: "report"
 rpt-info-form: "edit config.yml"
+##############################
+
