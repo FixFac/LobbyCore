@@ -7,6 +7,9 @@ use fix\Main;
 use pocketmine\event\Listener;
 
 use pocketmine\player\Player;
+use pocketmine\Server;
+
+use pocketmine\world\World;
 
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerQuitEvent;
@@ -28,7 +31,6 @@ class EventListener implements Listener {
         $player = $event->getPlayer();
         $event->setJoinMessage("");
         $this->plugin->getServer()->broadcastMessage("§8(§a+§8)§e " . $player->getName() . "§7 Joined the server.");
-        $this->plugin->prot[] = $player->getName();
         $player->getInventory()->clearAll();
         $player->getArmorInventory()->clearAll();
         $player->getEffects()->clear();
@@ -51,31 +53,14 @@ class EventListener implements Listener {
 
     }
 
-    public function onDrop(PlayerDropItemEvent $event) : void {
-        $player = $event->getPlayer();
-        if (in_array ($player->getName(), $this->plugin->prot)) {
-            $event->cancel();
-        }
-        return;
-    }
+    public function onDropItem(PlayerDropItemEvent $event) : void { 
+		$player = $event->getPlayer();
+		if ($player->getWorld() === Server::getInstance()->getWorldManager()->getDefaultWorld()) {
+			$event->cancel();
+		}
+	}
 
-    public function onBreak(BlockBreakEvent $event) : void {
-        $player = $event->getPlayer();
-        if (in_array ($player->getName(), $this->plugin->prot)) {
-            $event->cancel();
-        }
-        return;
-    }
-
-    public function onPlace(BlockPlaceEvent $event) : void {
-        $player = $event->getPlayer();
-        if (in_array ($player->getName(), $this->plugin->prot)) {
-            $event->cancel();
-        }
-        return;
-    }
-
-    public function ColoChatEvent(PlayerChatEvent $event): void {
+    public function ColorChatEvent(PlayerChatEvent $event) : void {
         $player = $event->getPlayer();
         $msg = $event->getMessage();
 
@@ -111,7 +96,7 @@ class EventListener implements Listener {
             Main::useItemForms()->GamesForm($player);
             $event->cancel();
         }
-        if($usage === "§5Cosmeticos"){
+        if($usage === "§5Cosmeticos§1"){
             if(!$player->hasPermission("cosmeticos.item")){
                 $player->sendMessage("§cInsufficient permissions to execute this action");
                 $event->cancel();
@@ -121,7 +106,7 @@ class EventListener implements Listener {
             $event->cancel();
         }
 
-        if($usage === "§2Info"){
+        if($usage === "§2Info§1"){
             if(!$player->hasPermission("info.item")){
                 $player->sendMessage("§cInsufficient permissions to execute this action");
                 $event->cancel();
@@ -131,7 +116,7 @@ class EventListener implements Listener {
             $event->cancel();
         }
 
-        if($usage === "§cReport"){
+        if($usage === "§cReport§1"){
             if(!$player->hasPermission("report.item")){
                 $player->sendMessage("§cInsufficient permissions to execute this action");
                 $event->cancel();

@@ -93,8 +93,9 @@ class ItemForms {
   				Main::useSounds()->addSound($player, "bubble.pop", 1, 1);
 				break;
 				case 2:
-  				$this->ColorForm($player);
+  				$this->ColorChatForm($player);
   				Main::useSounds()->addSound($player, "bubble.pop", 1, 1);
+                break;
                 case 3:
                 $this->ncolorsForm($player);
                 Main::useSounds()->addSound($player, "bubble.pop", 1, 1);
@@ -103,6 +104,7 @@ class ItemForms {
                 Main::useSounds()->addSound($player, "note.bell", 1, 1);
                 break;
 			}
+
 		});	
 		$form->setTitle($this->getPlugin()->config->getNested("title-cosmeticos"));
         $form->setContent($this->getPlugin()->config->getNested("content-cosmeticos"));
@@ -198,7 +200,7 @@ class ItemForms {
         $form->sendToPlayer($player);
 	}
 
-    public function ColorForm($player){
+    public function ColorChatForm($player){
         $form = new SimpleForm(function(Player $player, int $data = null){
             if($data === null){
                 return true;
@@ -224,15 +226,13 @@ class ItemForms {
                 }
                 break;
             }
-            return true;
         });
         $form->setTitle("§1C§2o§3l§4o§5r§6C§7h§8a§9t");
         $form->setContent("§7Enable or disable colorchat");
         $form->addButton("§l§1C§2o§3l§4o§5r§6C§7h§8a§9t §aON");
         $form->addButton("§l§1C§2o§3l§4o§5r§6C§7h§8a§9t §cOFF");
-        $form->addButton("Cerrar");
+        $form->addButton("Close");
         $form->sendToPlayer($player);
-        return $form;
 	}
     //Plugin NCorlos
     public function ncolorsForm($player){
@@ -308,7 +308,6 @@ class ItemForms {
                 Main::useSounds()->addSound($player, "mob.village.idle", 1, 1);
                 break;
             }
-        return true;
         });
         $form->setTitle($this->getPlugin()->config->getNested("info-form-title"));
         $form->setContent($this->getPlugin()->config->getNested("info-form-content"));
